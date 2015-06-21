@@ -65,7 +65,6 @@ func (s *Searcher) NextLines(fname string, line int) (lines []int, err error) {
 	}
 	defer func() {
 		if e := recover(); e != nil {
-			e = e.(Done)
 			nl := make([]int, 0, len(lines))
 			fnd := make(map[int]bool)
 			for _, l := range lines {
